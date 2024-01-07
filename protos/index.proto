@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "course.proto";
+
+message Person {
+    int32 id = 1;
+    reserved "firstName,lastName";
+    string fisrtName = 2;
+    string lastName = 3;
+    bool isActive = 4;
+    float height = 5;
+    bytes image = 6;
+    repeated string phoneNumbers = 7;
+
+    enum Skills {
+        BACKEND_DEVELOPER = 0;
+        FRONTEND_DEVELOPER = 1;
+        NODEJS = 2;
+        REACTJS = 3;
+    }
+
+    Skills skill = 8;
+    Date birthday = 9;
+    Course course = 10;
+}
+
+message Date {
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
+    int32 week = 4;
+    string time = 5;
+}
